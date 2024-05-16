@@ -32,11 +32,9 @@ system to before you uninstalled *httpd*:
 dnf -y history rollback 11
 ----
 
-____
-_NOTE:_ The number 11 here is used here to specify that the rollback the
+NOTE: The number 11 here is used here to specify that the rollback the
 state of the system to how it was at transaction ID 6, or before you
 removed *httpd*.
-____
 
 You can use other relative offsets, such as `+last-3+`, or you can use
 absolute transaction IDs. For example, `+dnf history rollback 2+` would
@@ -63,6 +61,8 @@ previous transaction.
 There are many more subcommands that you can use to customize how DNF
 behaves. Check out this
 https://access.redhat.com/sites/default/files/attachments/rh_yum_cheatsheet_1214_jcs_print-1.pdf[YUM
-Command Cheat Sheet for RHEL] for more info. >__NOTE:__ DNF and YUM are
+Command Cheat Sheet for RHEL] for more info.
+
+NOTE: DNF and YUM are
 syntactically identical. You can refer to the YUM cheat sheet for
 subcommands that will all work with DNF.
