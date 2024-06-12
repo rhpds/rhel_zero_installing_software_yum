@@ -10,9 +10,9 @@ dnf list updates
 ----
 << OUTPUT ABRIDGED >>
 Available Upgrades
-bash.x86_64              4.4.20-2.el8                               rhui-rhel-8-for-x86_64-baseos-rhui-rpms
-chrony.x86_64            4.1-1.el8                                  rhui-rhel-8-for-x86_64-baseos-rhui-rpms
-systemd.x86_64           239-51.el8_5.3                             rhui-rhel-8-for-x86_64-baseos-rhui-rpms
+curl.x86_64          7.76.1-26.el9_3.3   rhel-9-for-x86_64-baseos-rpms
+dbus.x86_64          1:1.12.20-8.el9     rhel-9-for-x86_64-baseos-rpms
+dbus-common.noarch   1:1.12.20-8.el9     rhel-9-for-x86_64-baseos-rpms
 << OUTPUT ABRIDGED >>
 ----
 
@@ -24,29 +24,30 @@ NOTE: If you instead want to make sure your entire system is up to
 date, running `+dnf update+` without any other arguments apply updates
 for all packages on your system (including YUM itself).
 
-At the time of writing this lab, the *bash* package required an update.
-Let’s update *bash*. Use the `+-y+` option to automatically say yes to
+At the time of writing this lab, the *curl* package required an update.
+Let’s update *curl*. Use the `+-y+` option to automatically say yes to
 any prompts for the purposes of this lab.
 
 Feel free to update any package listed.
 
 [source,bash]
 ----
-dnf -y update bash
+dnf -y update curl
 ----
 
 [source,bash]
 ----
 << OUTPUT ABRIDGED >>
 ===============================================================
- Package                Architecture       Size
+ Package     Arch    Version            Repository        Size
 ===============================================================
 Upgrading:
- bash                   x86_64             1.5 M
+ curl        x86_64  7.76.1-26.el9_3.3  rhel-9-for-x86_64-baseos-rpms   298 k
+ libcurl     x86_64  7.76.1-26.el9_3.3  rhel-9-for-x86_64-baseos-rpms   286 k
 
 Transaction Summary
 ===============================================================
-Upgrade  1 Package
+Upgrade  2 Packages
 
 << OUTPUT ABRIDGED >>
 ----
@@ -63,7 +64,7 @@ Removing a package follows the same theme of simplicity.
 
 [source,bash]
 ----
-dnf -y remove httpd
+dnf -y remove rhc
 ----
 
 The extensive output shows you information about which dependent RPMs
@@ -73,20 +74,15 @@ were removed as part of this transaction.
 ----
 << OUTPUT ABRIDGED >>
 Removing:
- httpd            x86_64 2.4.37-39.module+el8.4.0+9658+b87b2deb
-
+ rhc                                x86_64  1:0.2.2-1.el9  @System  30 M
 Removing dependent packages:
- mod_ssl          x86_64 1:2.4.37-39.module+el8.4.0+9658+b87b2deb
-
-Removing unused dependencies:
- apr              x86_64 1.6.3-11.el8
+ redhat-cloud-client-configuration  noarch  1-10.el9       @System  6.5 k
 
 << OUTPUT ABRIDGED >>
 
 Removed:
-  httpd-2.4.37-39.module+el8.4.0+9658+b87b2deb.x86_64
-  httpd-filesystem-2.4.37-39.module+el8.4.0+9658+b87b2deb.noarch
-  httpd-tools-2.4.37-39.module+el8.4.0+9658+b87b2deb.x86_64
+redhat-cloud-client-configuration-1-10.el9.noarch
+rhc-1:0.2.2-1.el9.x86_64
 
 Complete!
 ----
@@ -96,14 +92,14 @@ uninstalled:
 
 [source,bash]
 ----
-dnf list httpd
+dnf list rhc
 ----
 
 [source,bash]
 ----
 << OUTPUT ABRIDGED >>
 Available Packages
-httpd.x86_64 2.4.37-39.module+el8.4.0+9658+b87b2deb
+rhc.x86_64  1:0.2.4-3.el9_3  rhel-9-for-x86_64-appstream-rpm
 ----
 
 The package is now listed as _Available_ rather than _Installed_. The

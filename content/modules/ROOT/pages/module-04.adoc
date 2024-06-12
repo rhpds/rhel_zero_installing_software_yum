@@ -29,10 +29,10 @@ this command with the *httpd* package.
 
 [source,bash]
 ----
-rpm -q --scripts httpd
+rpm -q --scripts rhc
 ----
 
-The output shows a script that creates a preset for the *httpd* service
+The output shows a script that creates a preset for the *rhc* service
 behind the scenes when the package is installed.
 
 == Showing changelog

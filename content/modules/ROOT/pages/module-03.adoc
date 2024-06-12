@@ -14,12 +14,9 @@ executing rollbacks.
 ----
 ID| Command                  | Date and time    | Action(s)| Altered
 ------------------------------------------------------------------
-12 | -y remove httpd         | 2021-12-22 01:12 | Removed  |   10
-11 | -y update bash          | 2021-12-22 01:12 | Upgrade  |    1
-10 | -y install wireshark    | 2021-12-22 01:07 | Install  |   98
- 9 | install -y httpd        | 2021-12-22 01:04 | Install  |   10  <
- 8 |                         | 2021-12-22 01:02 | I, U     |   81 >
- 7 | install -y git          | 2021-09-03 15:10 | Install  |   48
+9 | remove rhc               | 2024-06-12 19:01 | Removed  | 2 EE
+8 | update curl -y           | 2024-06-12 18:56 | Upgrade  | 2
+7 | install -y wireshark     | 2024-06-12 18:45 | Install  | 197 EE
 ----
 
 This subcommand is also useful for rolling back transactions if you
@@ -29,12 +26,12 @@ system to before you uninstalled *httpd*:
 
 [source,bash]
 ----
-dnf -y history rollback 11
+dnf -y history rollback 8
 ----
 
-NOTE: The number 11 here is used here to specify that the rollback the
-state of the system to how it was at transaction ID 6, or before you
-removed *httpd*.
+NOTE: The number 8 here is used here to specify that the rollback the
+state of the system to how it was at transaction ID 8, or before you
+removed *rhc*.
 
 You can use other relative offsets, such as `+last-3+`, or you can use
 absolute transaction IDs. For example, `+dnf history rollback 2+` would
@@ -44,17 +41,13 @@ rollback to the transaction where *rsync* was installed.
 ----
 << OUTPUT ABRIDGED >>
 Installed:
-  apr-1.6.3-11.el8.x86_64
-  apr-util-1.6.1-6.el8.x86_64
-  apr-util-bdb-1.6.1-6.el8.x86_64
-  apr-util-openssl-1.6.1-6.el8.x86_64
-  httpd-2.4.37-39.module+el8.4.0+9658+b87b2deb.x86_64
-  httpd-filesystem-2.4.37-39.module+el8.4.0+9658+b87b2deb.noarch
+  redhat-cloud-client-configuration-1-10.el9.noarch
+  rhc-1:0.2.2-1.el9.x86_64
 
 Complete!
 ----
 
-This command reinstalled the RPMs that are part of *httpd* (including
+This command reinstalled the RPMs that are part of *rhc* (including
 all dependencies), restoring the system state to how it was before the
 previous transaction.
 

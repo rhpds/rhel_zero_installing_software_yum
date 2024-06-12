@@ -38,10 +38,9 @@ packages that must be installed as dependencies for Wireshark:
 Arch   Version         Repository                        Size
 ===================================================================
 Installing:
-wireshark
-x86_64 1:2.6.2-12.el8  rhel-9-for-x86_64-appstream-rpms 3.7 M
+wireshark x86_64 1:3.4.10-6.el9  rhel-9-for-x86_64-appstream-rpms  3.9 M
 Installing dependencies:
-flac-libs
+ ModemManager-glib x86_64 1.20.2-1.el9 rhel-9-for-x86_64-baseos-rpms 337 k
 << OUTPUT ABRIDGED >>
 ----
 
@@ -52,8 +51,8 @@ were up to date.
 [source,bash]
 ----
 << OUTPUT ABRIDGED >>
-Verifying        : libgudev-232-4.el8.x86_64               35/36
-Verifying        : pcre2-utf16-10.32-2.el8.x86_64          36/36
+  Verifying: nss-sysinit-3.90.0-6.el9_3.x86_64  196/197
+  Verifying: nss-util-3.90.0-6.el9_3.x86_64     197/197
 Installed products updated.
 << OUTPUT ABRIDGED >>
 ----
@@ -65,9 +64,10 @@ were installed in support of Wireshark’s installation.
 ----
 << OUTPUT ABRIDGED >>
 Installed:
-  flac-libs-1.3.2-9.el8.x86_64
-  glx-utils-8.4.0-5.20181118git1830dcb.el8.x86_64
-  gsm-1.0.17-5.el8.x86_64
+  ModemManager-glib-1.20.2-1.el9.x86_64
+  abattis-cantarell-fonts-0.301-4.el9.noarch
+  adobe-source-code-pro-fonts-2.030.1.050-12.el9.1.noarch
+  adwaita-cursor-theme-40.1.1-3.el9.noarch
 << OUTPUT ABRIDGED >>
 
 Complete!
@@ -84,8 +84,7 @@ dnf list wireshark
 ----
 << OUTPUT ABRIDGED >>
 Installed Packages
-wireshark.x86_64
-         1:2.6.2-12.el8 @rhel-8-for-x86_64-appstream-rpms
+wireshark.x86_64 1:3.4.10-6.el9  @rhel-9-for-x86_64-appstream-rpms
 ----
 
 This shows how powerful DNF is, as a single command will take care of
