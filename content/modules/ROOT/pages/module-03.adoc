@@ -14,7 +14,7 @@ executing rollbacks.
 ----
 ID| Command                  | Date and time    | Action(s)| Altered
 ------------------------------------------------------------------
-9 | remove rhc               | 2024-06-12 19:01 | Removed  | 2 EE
+9 | remove httpd             | 2024-06-12 19:01 | Removed  | 2 EE
 8 | update curl -y           | 2024-06-12 18:56 | Upgrade  | 2
 7 | install -y wireshark     | 2024-06-12 18:45 | Install  | 197 EE
 ----
@@ -31,7 +31,7 @@ dnf -y history rollback 8
 
 NOTE: The number 8 here is used here to specify that the rollback the
 state of the system to how it was at transaction ID 8, or before you
-removed *rhc*.
+removed *httpd*.
 
 You can use other relative offsets, such as `+last-3+`, or you can use
 absolute transaction IDs. For example, `+dnf history rollback 2+` would
@@ -41,13 +41,13 @@ rollback to the transaction where *rsync* was installed.
 ----
 << OUTPUT ABRIDGED >>
 Installed:
-  redhat-cloud-client-configuration-1-10.el9.noarch
-  rhc-1:0.2.2-1.el9.x86_64
+  httpd-2.4.57-5.el9.x86_64
+  httpd-core-2.4.57-5.el9.x86_64
 
 Complete!
 ----
 
-This command reinstalled the RPMs that are part of *rhc* (including
+This command reinstalled the RPMs that are part of *httpd* (including
 all dependencies), restoring the system state to how it was before the
 previous transaction.
 
