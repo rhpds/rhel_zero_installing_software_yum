@@ -16,7 +16,7 @@ traveling in and out of your system. This functionality in particular is
 not important to this lab, this application was picked simply because it
 serves as a good test subject for the upcoming examples.
 
-[source,bash]
+[source,bash,subs="+macros,+attributes",role=execute]
 ----
 dnf -y install wireshark
 ----
@@ -32,7 +32,7 @@ This installation generates a large output, so here is a high level
 summary of what each section means. The first section shows all of the
 packages that must be installed as dependencies for Wireshark:
 
-[source,bash]
+[source,text]
 ----
 << OUTPUT ABRIDGED >>
 Arch   Version         Repository                        Size
@@ -48,7 +48,7 @@ The next section of the output shows a verification status for each
 dependent package. In this case, DNF made sure that 36 other packages
 were up to date.
 
-[source,bash]
+[source,text]
 ----
 << OUTPUT ABRIDGED >>
   Verifying: nss-sysinit-3.90.0-6.el9_3.x86_64  196/197
@@ -60,7 +60,7 @@ Installed products updated.
 The final section of the output is a list of all of the packages that
 were installed in support of Wireshark’s installation.
 
-[source,bash]
+[source,text]
 ----
 << OUTPUT ABRIDGED >>
 Installed:
@@ -75,12 +75,12 @@ Complete!
 
 You can verify this installation with the `+dnf list+` command:
 
-[source,bash]
+[source,bash,subs="+macros,+attributes",role=execute]
 ----
 dnf list wireshark
 ----
 
-[source,bash]
+[source,text]
 ----
 << OUTPUT ABRIDGED >>
 Installed Packages

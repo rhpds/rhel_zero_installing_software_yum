@@ -4,7 +4,7 @@ files not being installed properly. `+rpm+` has a validation option
 the package. Remove a file from the Wireshark package to test out this
 validation functionality:
 
-[source,bash]
+[source,bash,subs="+macros,+attributes",role=execute]
 ----
 rm -f /usr/share/icons/hicolor/256x256/apps/wireshark.png
 ----
@@ -12,12 +12,12 @@ rm -f /usr/share/icons/hicolor/256x256/apps/wireshark.png
 Use the `+-V+` option with `+rpm+` to check the file status of
 Wireshark.
 
-[source,bash]
+[source,bash,subs="+macros,+attributes",role=execute]
 ----
 rpm -V wireshark
 ----
 
-[source,bash]
+[source,text]
 ----
 missing     /usr/share/icons/hicolor/256x256/apps/wireshark.png
 ----
@@ -25,12 +25,12 @@ missing     /usr/share/icons/hicolor/256x256/apps/wireshark.png
 Now that you have seen there is a missing file, reinstall the Wireshark
 package to return it to its proper state:
 
-[source,bash]
+[source,bash,subs="+macros,+attributes",role=execute]
 ----
 dnf -y reinstall wireshark
 ----
 
-[source,bash]
+[source,text]
 ----
 << OUTPUT ABRIDGED >>
 Arch   Version        Repository                        Size
@@ -43,12 +43,12 @@ x86_64 1:2.6.2-12.el8 rhel-9-for-x86_64-appstream-rpms 3.7 M
 
 Check that *wireshark.png* has been restored:
 
-[source,bash]
+[source,bash,subs="+macros,+attributes",role=execute]
 ----
 ls /usr/share/icons/hicolor/256x256/apps/
 ----
 
-[source,bash]
+[source,text]
 ----
 wireshark.png
 ----
@@ -58,12 +58,12 @@ files. This command can inform the user if any files have changed since
 installation. To test this out, run the validation command on the PAM
 package.
 
-[source,bash]
+[source,bash,subs="+macros,+attributes",role=execute]
 ----
 rpm -V pam
 ----
 
-[source,bash]
+[source,text]
 ----
 S.5....T.  c /etc/pam.d/password-auth
 S.5....T.  c /etc/pam.d/system-auth

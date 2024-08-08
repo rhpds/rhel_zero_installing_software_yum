@@ -11,7 +11,7 @@ information is hidden by default to keep the package installation
 process simple, but it is often useful to know where specific files are
 located.
 
-[source,bash]
+[source,bash,subs="+macros,+attributes",role=execute]
 ----
 rpm -ql wireshark
 ----
@@ -27,7 +27,7 @@ return the contents of these postinstall scripts for a specific package.
 Wireshark does not actually have any postinstall scripts, so instead try
 this command with the *httpd* package.
 
-[source,bash]
+[source,bash,subs="+macros,+attributes",role=execute]
 ----
 rpm -q --scripts httpd
 ----
@@ -40,7 +40,7 @@ behind the scenes when the package is installed.
 Specifying `+--changelog+` with `+rpm -q+` will display what has
 recently been changed in a package.
 
-[source,bash]
+[source,bash,subs="+macros,+attributes",role=execute]
 ----
 rpm -q --changelog wireshark
 ----
