@@ -54,7 +54,7 @@ previous transaction.
 There are many more subcommands that you can use to customize how DNF
 behaves. Check out this
 https://access.redhat.com/sites/default/files/attachments/rh_yum_cheatsheet_1214_jcs_print-1.pdf[YUM
-Command Cheat Sheet for RHEL] for more info.
+Command Cheat Sheet for RHEL^] for more info.
 
 NOTE: DNF and YUM are
 syntactically identical. You can refer to the YUM cheat sheet for

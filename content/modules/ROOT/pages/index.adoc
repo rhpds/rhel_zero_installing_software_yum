@@ -21,12 +21,10 @@ serves as a good test subject for the upcoming examples.
 dnf -y install wireshark
 ----
 
-____
-_Note:_ The `+-y+` option will automatically answer yes to any prompts
+NOTE: The `+-y+` option will automatically answer yes to any prompts
 during the installation. Using this option is not best practice when
 installing software on your own system, but it is useful for
 streamlining some operations in this lab.
-____
 
 This installation generates a large output, so here is a high level
 summary of what each section means. The first section shows all of the
