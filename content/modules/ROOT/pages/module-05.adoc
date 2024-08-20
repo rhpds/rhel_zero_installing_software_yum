@@ -65,12 +65,14 @@ rpm -V pam
 
 [source,text]
 ----
-S.5....T.  c /etc/pam.d/password-auth
-S.5....T.  c /etc/pam.d/system-auth
+....L....  c /etc/pam.d/fingerprint-auth
+....L....  c /etc/pam.d/password-auth
+....L....  c /etc/pam.d/postlogin
+....L....  c /etc/pam.d/smartcard-auth
+....L....  c /etc/pam.d/system-auth
 ----
 
-This query returns two files with unexpected criteria, *password-auth*
-and *system-auth*. The first column of this output tells you that both
+This query returns files with unexpected criteria. The first column of this output tells you that both
 of these files have an unexpected size, checksum, and timestamp. Both of
 these files are configuration files, so it makes sense that they would
 be modified after installation to suit the purpose of this particular
