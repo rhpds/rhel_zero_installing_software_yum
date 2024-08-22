@@ -10,9 +10,8 @@ dnf list updates
 ----
 << OUTPUT ABRIDGED >>
 Available Upgrades
-curl.x86_64          7.76.1-26.el9_3.3   rhel-9-for-x86_64-baseos-rpms
-dbus.x86_64          1:1.12.20-8.el9     rhel-9-for-x86_64-baseos-rpms
-dbus-common.noarch   1:1.12.20-8.el9     rhel-9-for-x86_64-baseos-rpms
+curl.x86_64         7.76.1-29.el9_4     rhel-9-for-x86_64-baseos-rpms
+shim-x64.x86_64     15.8-4.el9_3        rhel-9-for-x86_64-baseos-rpm
 << OUTPUT ABRIDGED >>
 ----
 
@@ -42,8 +41,7 @@ dnf -y update curl
  Package     Arch    Version            Repository        Size
 ===============================================================
 Upgrading:
- curl        x86_64  7.76.1-26.el9_3.3  rhel-9-for-x86_64-baseos-rpms   298 k
- libcurl     x86_64  7.76.1-26.el9_3.3  rhel-9-for-x86_64-baseos-rpms   286 k
+ curl        x86_64  7.76.1-29.el9_4    rhel-9-for-x86_64-baseos-rpms   298 k
 
 Transaction Summary
 ===============================================================
@@ -109,7 +107,7 @@ dnf list httpd
 ----
 << OUTPUT ABRIDGED >>
 Available Packages
-httpd      x86_64     2.4.57-5.el9     @rhel-9-for-x86_64-appstream-rpms
+httpd      x86_64     2.4.57-8.el9     @rhel-9-for-x86_64-appstream-rpms
 ----
 
 The package is now listed as _Available_ rather than _Installed_. The
