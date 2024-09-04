@@ -16,6 +16,7 @@ traveling in and out of your system. This functionality in particular is
 not important to this lab, this application was picked simply because it
 serves as a good test subject for the upcoming examples.
 
+.Command
 [source,bash,subs="+macros,+attributes",role=execute]
 ----
 dnf -y install wireshark
@@ -30,6 +31,7 @@ This installation generates a large output, so here is a high level
 summary of what each section means. The first section shows all of the
 packages that must be installed as dependencies for Wireshark:
 
+.Output
 [source,text]
 ----
 << OUTPUT ABRIDGED >>
@@ -46,6 +48,7 @@ The next section of the output shows a verification status for each
 dependent package. In this case, DNF made sure that 36 other packages
 were up to date.
 
+.Output
 [source,text]
 ----
 << OUTPUT ABRIDGED >>
@@ -58,6 +61,7 @@ Installed products updated.
 The final section of the output is a list of all of the packages that
 were installed in support of Wireshark’s installation.
 
+.Output
 [source,text]
 ----
 << OUTPUT ABRIDGED >>
@@ -73,11 +77,13 @@ Complete!
 
 You can verify this installation with the `+dnf list+` command:
 
+.Command
 [source,bash,subs="+macros,+attributes",role=execute]
 ----
 dnf list wireshark
 ----
 
+.Output
 [source,text]
 ----
 << OUTPUT ABRIDGED >>

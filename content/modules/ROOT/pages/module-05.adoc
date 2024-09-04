@@ -4,6 +4,7 @@ files not being installed properly. `+rpm+` has a validation option
 the package. Remove a file from the Wireshark package to test out this
 validation functionality:
 
+.Command
 [source,bash,subs="+macros,+attributes",role=execute]
 ----
 rm -f /usr/share/icons/hicolor/256x256/apps/wireshark.png
@@ -12,11 +13,13 @@ rm -f /usr/share/icons/hicolor/256x256/apps/wireshark.png
 Use the `+-V+` option with `+rpm+` to check the file status of
 Wireshark.
 
+.Command
 [source,bash,subs="+macros,+attributes",role=execute]
 ----
 rpm -V wireshark
 ----
 
+.Output
 [source,text]
 ----
 missing     /usr/share/icons/hicolor/256x256/apps/wireshark.png
@@ -25,11 +28,13 @@ missing     /usr/share/icons/hicolor/256x256/apps/wireshark.png
 Now that you have seen there is a missing file, reinstall the Wireshark
 package to return it to its proper state:
 
+.Command
 [source,bash,subs="+macros,+attributes",role=execute]
 ----
 dnf -y reinstall wireshark
 ----
 
+.Output
 [source,text]
 ----
 << OUTPUT ABRIDGED >>
@@ -43,11 +48,13 @@ x86_64 1:3.4.10-6.el9 rhel-9-for-x86_64-appstream-rpms 3.7 M
 
 Check that *wireshark.png* has been restored:
 
+.Command
 [source,bash,subs="+macros,+attributes",role=execute]
 ----
 ls /usr/share/icons/hicolor/256x256/apps/
 ----
 
+.Output
 [source,text]
 ----
 wireshark.png
@@ -58,11 +65,13 @@ files. This command can inform the user if any files have changed since
 installation. To test this out, run the validation command on the PAM
 package.
 
+.Command
 [source,bash,subs="+macros,+attributes",role=execute]
 ----
 rpm -V pam
 ----
 
+.Output
 [source,text]
 ----
 ....L....  c /etc/pam.d/fingerprint-auth

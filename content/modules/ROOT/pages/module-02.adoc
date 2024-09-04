@@ -1,11 +1,13 @@
 The `+list+` subcommand is useful for finding out which packages have
 available updates on the system.
 
+.Command
 [source,bash,subs="+macros,+attributes",role=execute]
 ----
 dnf list updates
 ----
 
+.Output
 [source,text]
 ----
 << OUTPUT ABRIDGED >>
@@ -29,11 +31,13 @@ any prompts for the purposes of this lab.
 
 Feel free to update any package listed.
 
+.Command
 [source,bash,subs="+macros,+attributes",role=execute]
 ----
 dnf -y update curl
 ----
 
+.Output
 [source,text]
 ----
 << OUTPUT ABRIDGED >>
@@ -60,6 +64,7 @@ subcommands will both carry out the `+upgrade+` operation.
 
 Removing a package follows the same theme of simplicity.
 
+.Command
 [source,bash,subs="+macros,+attributes",role=execute]
 ----
 dnf -y remove httpd
@@ -68,6 +73,7 @@ dnf -y remove httpd
 The extensive output shows you information about which dependent RPMs
 were removed as part of this transaction.
 
+.Output
 [source,text]
 ----
 << OUTPUT ABRIDGED >>
@@ -98,11 +104,13 @@ Complete!
 Use the `+list+` subcommand to confirm that the package has been
 uninstalled:
 
+.Command
 [source,bash,subs="+macros,+attributes",role=execute]
 ----
 dnf list httpd
 ----
 
+.Output
 [source,text]
 ----
 << OUTPUT ABRIDGED >>

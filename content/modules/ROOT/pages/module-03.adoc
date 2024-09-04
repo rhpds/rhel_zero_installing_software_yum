@@ -1,6 +1,7 @@
 The `+history+` subcommand provides a summary of recent `+dnf+`
 transactions.
 
+.Command
 [source,bash,subs="+macros,+attributes",role=execute]
 ----
 dnf history
@@ -10,6 +11,7 @@ The output contains transaction IDs in the first column, which are how
 you reference specific locations in the transaction history when
 executing rollbacks.
 
+.Output
 [source,text]
 ----
 ID| Command                  | Date and time    | Action(s)| Altered
@@ -24,6 +26,7 @@ erroneously install or update a package, as it cleans up all of the
 dependencies associated with the package. Rollback the state of your
 system to before you uninstalled *httpd*:
 
+.Command
 [source,bash,subs="+macros,+attributes",role=execute]
 ----
 dnf -y history rollback 9
@@ -36,6 +39,7 @@ You can use other relative offsets, such as `+last-3+`, or you can use
 absolute transaction IDs. For example, `+dnf history rollback 2+` would
 rollback to the transaction where *rsync* was installed.
 
+.Output
 [source,text]
 ----
 << OUTPUT ABRIDGED >>
