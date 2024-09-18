@@ -115,7 +115,7 @@ dnf list httpd
 ----
 << OUTPUT ABRIDGED >>
 Available Packages
-httpd      x86_64     2.4.57-8.el9     @rhel-9-for-x86_64-appstream-rpms
+httpd      x86_64     2.4.57-8.el9     rhel-9-for-x86_64-appstream-rpms
 ----
 
 The package is now listed as _Available_ rather than _Installed_. The
