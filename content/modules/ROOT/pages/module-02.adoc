@@ -23,7 +23,7 @@ look for that package.
 
 NOTE: If you instead want to make sure your entire system is up to
 date, running `+dnf update+` without any other arguments apply updates
-for all packages on your system (including YUM itself).
+for all packages on your system (including DNF itself).
 
 At the time of writing this lab, the *curl* package required an update.
 Let’s update *curl*. Use the `+-y+` option to automatically say yes to
