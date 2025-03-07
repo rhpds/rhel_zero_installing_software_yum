@@ -16,9 +16,9 @@ executing rollbacks.
 ----
 ID| Command                  | Date and time    | Action(s)| Altered
 ------------------------------------------------------------------
-10 | remove httpd             | 2024-06-12 19:01 | Removed  | 2 EE
-9 | update curl -y           | 2024-06-12 18:56 | Upgrade  | 2
-8 | install -y wireshark     | 2024-06-12 18:45 | Install  | 197 EE
+9 | remove httpd             | 2024-06-12 19:01 | Removed  | 2 EE
+8 | update curl -y           | 2024-06-12 18:56 | Upgrade  | 2
+7 | install -y wireshark     | 2024-06-12 18:45 | Install  | 197 EE
 ----
 
 This subcommand is also useful for rolling back transactions if you
@@ -29,11 +29,11 @@ system to before you uninstalled *httpd*:
 .Command
 [source,bash,subs="+macros,+attributes",role=execute]
 ----
-dnf -y history rollback 9
+dnf -y history rollback 8
 ----
 
-NOTE: The number 9 in the above command signifies the point in time to rollback dnf transactions. 
-The system will be in the same state as transaction ID 9, or before you removed *httpd*.
+NOTE: The number 8 in the above command signifies the point in time to rollback dnf transactions. 
+The system will be in the same state as transaction ID 8, or before you removed *httpd*.
 
 You can use other relative offsets, such as `+last-3+`, or you can use
 absolute transaction IDs. For example, `+dnf history rollback 2+` would

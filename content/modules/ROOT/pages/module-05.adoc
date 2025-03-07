@@ -10,6 +10,8 @@ validation functionality:
 rm -f /usr/share/icons/hicolor/256x256/apps/wireshark.png
 ----
 
+This command has no expected output.
+
 Use the `+-V+` option with `+rpm+` to check the file status of
 Wireshark.
 
